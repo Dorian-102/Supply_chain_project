@@ -28,3 +28,10 @@ class Probleme(BaseModel):
         if len(self.minima_mensuels) == 0:
             raise ValueError("Il faut au moins un mois.")
         return self
+
+
+PROBLEME_EXEMPLE = Probleme(
+    effectif_initial=3,
+    effectif_final=3,
+    minima_mensuels=[3, 4, 6, 7, 4, 6, 2],
+)
