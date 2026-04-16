@@ -29,3 +29,8 @@ def test_minima_negatif_interdit():
 def test_minima_vides_interdits():
     with pytest.raises(ValidationError):
         Probleme(effectif_initial=3, effectif_final=3, minima_mensuels=[])
+
+
+def test_proportion_hors_bornes_interdite():
+    with pytest.raises(ValidationError):
+        Probleme(effectif_initial=3, effectif_final=3, minima_mensuels=[3], tolerance_manque=1.5)
